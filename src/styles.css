@@ -1,0 +1,50 @@
+ul {
+    list-style: none;
+} h2, h1 { color: #2b2b2b}
+.selectorRasgos > ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+}
+.selectorRasgos > ul > li > select{
+    height: 50px;
+    width: 50px;
+    margin-right: 10px;
+    border: 2.5px solid #cc292a;
+}
+.selectorRasgos > article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.selectorRasgos > article > figure{
+    margin-top: 0px;
+    width: 20vw;
+    position: relative;
+    border: 5px solid #e9b550;
+} 
+.selectorRasgos > article > button{
+    width: 200px;
+    margin-top: 20px;
+    height: 50px;
+    background-color: #0e4fad;
+    color: #fafafa;
+    border: 2.5px solid #083779;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+.selectorRasgos > article > figure > img:first-of-type {
+    width: 100%
+}.selectorRasgos > article > figure > img:nth-of-type(2) {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%
+
+}.selectorRasgos > article > figure > img:nth-of-type(3) {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%
+}
