@@ -1,30 +1,29 @@
 ul {
     list-style: none;
 } h2, h1 { color: #2b2b2b}
-.selectorRasgos > ul {
+.selectorRasgos > article > ul:first-of-type{
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: start;
+    justify-content: center;
+    min-width: 500px;
+    max-width: 1100px;
+    overflow: hidden;
+    border: 1px solid #2b2b2b;
+    padding: 5px;
 }
-.selectorRasgos > ul > li > select{
+.selectorRasgos > article > ul:first-of-type > li > button{
     height: 50px;
-    width: 50px;
+    width: 100px;
     margin-right: 10px;
     border: 2.5px solid #cc292a;
 }
-.selectorRasgos > article {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.selectorRasgos > article > figure{
+.selectorRasgos > figure > div{
     margin-top: 0px;
-    width: 20vw;
     position: relative;
     border: 5px solid #e9b550;
 } 
-.selectorRasgos > article > button{
+.selectorRasgos > figure > button{
     width: 200px;
     margin-top: 20px;
     height: 50px;
@@ -34,17 +33,47 @@ ul {
     font-weight: bold;
     margin-bottom: 50px;
 }
-.selectorRasgos > article > figure > img:first-of-type {
-    width: 100%
-}.selectorRasgos > article > figure > img:nth-of-type(2) {
+#exportar img:not(:first-of-type) {
     position: absolute;
     top: 0px;
     left: 0px;
-    width: 100%
+}
+.rasgos {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(200px, 1fr)
+    );
+} .rasgos > li,  .rasgos > li > button{
+    display: inline-block;
+} .rasgos > li > button{
+    min-width: 150px;
+    max-width:300px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    background-color: transparent;
+    border: 2px solid #e9b550;
+}
+#rasgos_cejas, #rasgos_ojos, #rasgos_nariz, #rasgos_piel, #rasgos_boca  {
+    display: none;
+}
 
-}.selectorRasgos > article > figure > img:nth-of-type(3) {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100%
+@media screen and (max-width: 1020px) {
+    .img_personaje {
+        height: 30vh;
+    } #exportar > button {display: none;}
+    .selectorRasgos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media screen and (min-width: 1020px) {
+    .img_personaje {
+        height: 50vh;
+    }
+    .selectorRasgos {
+        display: flex;
+        flex-direction: row;
+    }
 }
