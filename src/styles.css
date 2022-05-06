@@ -1,35 +1,71 @@
+:root {
+    --accent-color: #63AAB0;
+    --black: #0c0c0c;
+}
+* {box-sizing: border-box;}
+.texto_centrado{text-align: center; 
+}
 ul {
     list-style: none;
-} h2, h1 { color: #2b2b2b}
-.selectorRasgos > article > ul:first-of-type{
+} h2, h1 { color: var(--black)}
+.scroll_horizontal::-webkit-scrollbar {
+    height: 5px;
+    width: 0%;
+} .scroll_horizontal::-webkit-scrollbar-track {
+    border-radius: 10px;
+} .scroll_horizontal::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: var(--accent-color); 
+}
+#header {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    min-width: 500px;
-    max-width: 1100px;
-    overflow: hidden;
-    border: 1px solid #2b2b2b;
-    padding: 5px;
+    padding: 20px 20px 0px 20px;
+    margin: 0px;
 }
-.selectorRasgos > article > ul:first-of-type > li > button{
+.icon {
+    border: none;
+    background-color: transparent;
+    padding: 0%;
+} .icon, .icon>img {
+    width: 50px;
+    height: 50px;}
+#nombre_app {
+    font-size: 2rem;
+    color: var(--accent-color);
+    font-family: 'Fruktur', cursive;
+} 
+.selectorRasgos > article > ul:first-of-type{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    overflow: scroll;
+    padding: 10px;
+}
+.selectorRasgos > article>ul:first-of-type>li>button{
     height: 50px;
     width: 100px;
     margin-right: 10px;
-    border: 2.5px solid #cc292a;
-}
+    border: 1px solid #2b2b2b;
+    border-radius: 5px;
+    background-color: transparent;
+} /*.selectorRasgos > figure {
+    display: flex;
+    justify-content: space-between;
+}*/
 .selectorRasgos > figure > div{
-    margin-top: 0px;
+    margin: 0px;
+    padding: 0%;
     position: relative;
-    border: 5px solid #e9b550;
+    background-color: #d3d3d3;
 } 
-.selectorRasgos > figure > button{
+.selectorRasgos > figure button{
     width: 200px;
     margin-top: 20px;
     height: 50px;
-    background-color: #0e4fad;
+    background-color: var(--accent-color);
     color: #fafafa;
-    border: 2.5px solid #083779;
     font-weight: bold;
     margin-bottom: 50px;
 }
@@ -37,43 +73,84 @@ ul {
     position: absolute;
     top: 0px;
     left: 0px;
-}
-.rasgos {
-    display: grid;
-    grid-template-columns: repeat(
-        auto-fit,
-        minmax(200px, 1fr)
-    );
-} .rasgos > li,  .rasgos > li > button{
+    margin: 0px;
+    padding: 0px;
+} .rasgos>li,  .rasgos>li>button, .rasgos>li>button>img {
     display: inline-block;
-} .rasgos > li > button{
-    min-width: 150px;
-    max-width:300px;
+} .rasgos>li>button{
     margin-left: 10px;
     margin-bottom: 10px;
-    background-color: transparent;
-    border: 2px solid #e9b550;
+    background-color: #d3d3d3;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+} .rasgos > li>button:active{
+    box-shadow: inset 0px 0px 0px 2px var(--accent-color);
 }
-#rasgos_cejas, #rasgos_ojos, #rasgos_nariz, #rasgos_piel, #rasgos_boca  {
+#rasgos_cejas, #rasgos_ojos, #rasgos_accesorio, #rasgos_boca, #rasgos_fondo  {
     display: none;
 }
 
 @media screen and (max-width: 1020px) {
     .img_personaje {
-        height: 30vh;
+        max-height: 65vh;
+        max-width: 100%;
     } #exportar > button {display: none;}
     .selectorRasgos {
         display: flex;
         flex-direction: column;
+        padding: 0px 10px 10px 10px;
+        margin: 0px;
         align-items: center;
+    } .rasgos > li > button {
+        width: 100px;
+        height: 100px;
+    } .rasgos > li > button > img {
+        width: 80px;
+        height: 80px;
+    } .rasgos {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        height: 120px;
+        width: 100%;
+        overflow: scroll;
+    }
+    .selectorRasgos>article>ul:first-of-type{
+        max-width: calc(100% - 20px);
+    } 
+    #header {
+        justify-content: space-between;
     }
 }
 @media screen and (min-width: 1020px) {
     .img_personaje {
-        height: 50vh;
+        max-width: 40vw;
+        max-height: 80vh;
+    } #header > button {
+        display: none;
+    }
+    #header {text-align: center;}
+    #header {
+        justify-content: center;
     }
     .selectorRasgos {
         display: flex;
         flex-direction: row;
+        justify-content: center;
+    } .rasgos > li > button {
+        width: 150px;
+        height: 150px;
+    } .rasgos > li > button > img {
+        width: 130px;
+        height: 130px;
+    } .selectorRasgos > article > ul:first-of-type{
+        min-width: 35vw;
+        max-width: 45vw;
+    } .selectorRasgos > article {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content:flex-start;
     }
 }

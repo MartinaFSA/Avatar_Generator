@@ -11,7 +11,7 @@ function Cambioalor(){
   }
 
   return (
-    <div>
+    <div className='texto_centrado'>
       <h1>Sumar valores</h1>
       <p>{cont}</p>
       <button onClick={sumaClick}>Agregar</button>
@@ -22,16 +22,17 @@ function Cambioalor(){
 
 function PersonajeExportar() {
   /* Asignación con useState */
-  const [ojos, setOjos] = useState();
-  const [boca, setBoca] = useState();
-  const [nariz, setNariz] = useState();
-  const [cejas, setCejas] = useState();
+  const [ojos, setOjos] = useState(1);
+  const [boca, setBoca] = useState(3);
+  const [accesorio, setAccesorio] = useState(1);
   const [piel, setPiel] = useState(1);
-  const arrOjos = [1,2,3,4];
-  const arrCejas = [1,2,3,4];
-  const arrNariz = [1,2,3,4];
+  const [fondo, setFondo] = useState(1);
+  /*Mínimo 4 por array*/
+  const arrOjos = [1,0,2,3];
+  const arrAccesorio = [1,2,3,4];
   const arrBoca = [1,2,3,4];
-  const arrPiel = [1,2,3];
+  const arrPiel = [1,2,3,4];
+  const arrFondo = [1,2,3,4,5];
   
   /* Exportar archivo */
   const archivoExportado = function(i){
@@ -51,88 +52,76 @@ function PersonajeExportar() {
     setOjos(e.target.id);
   };  const bocaSeleccionada = function(e){
     setBoca(e.target.id);
-  };  const narizSeleccionada = function(e){
-    setNariz(e.target.id);
-  };  const cejasSeleccionadas = function(e){
-    setCejas(e.target.id);
+  };  const accesorioSeleccionada = function(e){
+    setAccesorio(e.target.id);
+  }; const fondoSeleccionado = function(e){
+    setFondo(e.target.id);
   };
   
-  function displayCejas(){    
-    let opciones_boca = document.getElementById("rasgos_boca");
-    opciones_boca.style.display = "none";    
-    let opciones_piel = document.getElementById("rasgos_piel");
-    opciones_piel.style.display = "none";
-    let opciones_nariz = document.getElementById("rasgos_nariz");
-    opciones_nariz.style.display = "none";
-    let opciones_ojos = document.getElementById("rasgos_ojos");
-    opciones_ojos.style.display = "none";
-
-    let opciones_cejas = document.getElementById("rasgos_cejas");
-    opciones_cejas.style.display = "block";
-  };  function displayOjos(){
-    let opciones_boca = document.getElementById("rasgos_boca");
+  /*Variables conseguidas por ID*/
+  const opciones_boca = document.getElementById("rasgos_boca");
+  const opciones_piel = document.getElementById("rasgos_piel");
+  const opciones_accesorio = document.getElementById("rasgos_accesorio");
+  const opciones_ojos = document.getElementById("rasgos_ojos");
+  const opciones_fondo = document.getElementById("rasgos_fondo");
+  
+  function displayOjos(){
     opciones_boca.style.display = "none";
-    let opciones_piel = document.getElementById("rasgos_piel");
     opciones_piel.style.display = "none"; 
-    let opciones_nariz = document.getElementById("rasgos_nariz");
-    opciones_nariz.style.display = "none";
-    let opciones_cejas = document.getElementById("rasgos_cejas");
-    opciones_cejas.style.display = "none";
-    let opciones_ojos = document.getElementById("rasgos_ojos");
+    opciones_fondo.style.display = "none";
+    opciones_accesorio.style.display = "none";
     opciones_ojos.style.display = "block";
-  };  function displayNariz(){    
-    let opciones_boca = document.getElementById("rasgos_boca");
+  };  function displayAccesorio(){    
     opciones_boca.style.display = "none";    
-    let opciones_piel = document.getElementById("rasgos_piel");
     opciones_piel.style.display = "none";
-    let opciones_ojos = document.getElementById("rasgos_ojos");
+    opciones_fondo.style.display = "none";
     opciones_ojos.style.display = "none";
-    let opciones_cejas = document.getElementById("rasgos_cejas");
-    opciones_cejas.style.display = "none";
-    let opciones_nariz = document.getElementById("rasgos_nariz");
-    opciones_nariz.style.display = "block";
+    opciones_accesorio.style.display = "block";
   };  function displayBoca(){ 
-    let opciones_piel = document.getElementById("rasgos_piel");
     opciones_piel.style.display = "none";
-    let opciones_nariz = document.getElementById("rasgos_nariz");
-    opciones_nariz.style.display = "none";
-    let opciones_ojos = document.getElementById("rasgos_ojos");
+    opciones_accesorio.style.display = "none";
     opciones_ojos.style.display = "none";
-    let opciones_cejas = document.getElementById("rasgos_cejas");
-    opciones_cejas.style.display = "none";
-    let opciones_boca = document.getElementById("rasgos_boca");
+    opciones_fondo.style.display = "none";
     opciones_boca.style.display = "block";   
   };  function displayPiel(){    
-    let opciones_boca = document.getElementById("rasgos_boca");
     opciones_boca.style.display = "none";
-    let opciones_nariz = document.getElementById("rasgos_nariz");
-    opciones_nariz.style.display = "none";
-    let opciones_ojos = document.getElementById("rasgos_ojos");
+    opciones_accesorio.style.display = "none";
     opciones_ojos.style.display = "none";
-    let opciones_cejas = document.getElementById("rasgos_cejas");
-    opciones_cejas.style.display = "none";    
-    let opciones_piel = document.getElementById("rasgos_piel");
+    opciones_fondo.style.display = "none";
     opciones_piel.style.display = "block";
+  };  function displayFondo(){    
+    opciones_boca.style.display = "none";
+    opciones_accesorio.style.display = "none";
+    opciones_ojos.style.display = "none";
+    opciones_piel.style.display = "none";
+    opciones_fondo.style.display = "block";
   };
 
   return (
     <div>
-      <h2 className="titulo">Creá un personaje!</h2>
-      {/* selectores de rasgos */}
+      <section id='header'>
+        <button className='icon'><img src='/img/icons/dice.png' alt='generar imagen al azar'></img></button>
+        <p id='nombre_app'>Avatar generator</p>
+        <button className='icon' onClick={archivoExportado}><img src='/img/icons/download.png' alt='descargar imagen'></img></button>
+      </section>
       <section className='selectorRasgos'>
           <figure id="exportar">
             <div>
-              <img src={"/img/piel/" + piel + ".png"} alt="" className='img_personaje'/>
-              <img src={"/img/ojos/" + ojos + ".png"} alt="" className='img_personaje'/>
-              <img src={"/img/boca/" + boca + ".png"} alt="" className='img_personaje'/>
-              <img src={"/img/nariz/" + nariz + ".png"} alt="" className='img_personaje'/>
-              <img src={"/img/cejas/" + cejas + ".png"} alt="" className='img_personaje'/>
+              <img src={"/img/fondo/" + fondo + ".png"} className='img_personaje'/>
+              <img src={"/img/piel/" + piel + ".png"} alt=" " className='img_personaje'/>
+              <img src={"/img/base/peloengominado.png"} alt=" " className='img_personaje'/>
+              <img src={"/img/base/baseOjosNariz.png"} className='img_personaje'/>
+              <img src={"/img/ojos/" + ojos + ".png"} alt=" " className='img_personaje'/>
+              <img src={"/img/base/brilloOjos.png"} className='img_personaje'/>
+              <img src={"/img/boca/" + boca + ".png"} alt=" " className='img_personaje'/>
+              <img src={"/img/accesorio/" + accesorio + ".png"} className='img_personaje'/>
+              <img src={"/img/base/ropaTraje.png"} alt=" " className='img_personaje'/>
             </div>
             <button onClick={archivoExportado}>Exportar personaje</button>
           </figure>
           <article>
-            <ul>
-              <li>
+            <ul className='scroll_horizontal'>
+              <li> 
                 <button onClick={displayPiel}>Piel</button>
               </li>
               <li>
@@ -142,35 +131,35 @@ function PersonajeExportar() {
                 <button onClick={displayOjos}>Ojos</button>
               </li>
               <li>
-                <button onClick={displayCejas}>Cejas</button>
+                <button onClick={displayAccesorio}>Accesorios</button>
               </li>
               <li>
-                <button onClick={displayNariz}>Nariz</button>
+                <button onClick={displayFondo}>Fondo</button>
               </li>
             </ul>
-            <ul className='rasgos' id='rasgos_piel'>
-              {arrPiel.map((piel, index) => (
-                  <li key={piel.toString()}> <button onClick={pielSeleccionada} id={piel}> <img src={"/img/piel/" + piel + ".png"} alt="" className='img_personaje' id={piel}></img> {piel} </button></li>  
+            <ul className='rasgos scroll_horizontal' id='rasgos_piel'>
+              {arrPiel.map((piel) => (
+                  <li key={piel.toString()}> <button onClick={pielSeleccionada} id={piel}> <img src={"/img/miniaturaPiel/" + piel + ".png"} alt="color de piel" id={piel}></img></button></li>  
                 ))}
             </ul>
-            <ul className='rasgos' id='rasgos_boca'>
-              {arrBoca.map((boca, index) => (
-                  <li key={boca.toString()}> <button onClick={bocaSeleccionada} id={boca}> <img src={"/img/boca/" + boca + ".png"} alt="" className='img_personaje' id={boca}></img> {boca} </button></li>  
+            <ul className='rasgos scroll_horizontal' id='rasgos_boca'>
+              {arrBoca.map((boca) => (
+                  <li key={boca.toString()}> <button onClick={bocaSeleccionada} id={boca}> <img src={"/img/miniaturaLabios/" + boca + ".png"} alt="color de labios" id={boca}></img></button></li>  
                 ))}
             </ul>
-            <ul className='rasgos' id='rasgos_nariz'>
-              {arrNariz.map((nariz, index) => (
-                  <li key={nariz.toString()}> <button onClick={narizSeleccionada} id={nariz}> <img src={"/img/nariz/" + nariz + ".png"} alt="" className='img_personaje' id={nariz}></img> {nariz} </button></li>  
+            <ul className='rasgos scroll_horizontal' id='rasgos_accesorio'>
+              {arrAccesorio.map((accesorio) => (
+                  <li key={accesorio.toString()}> <button onClick={accesorioSeleccionada} id={accesorio}> <img src={"/img/miniaturaAccesorio/" + accesorio + ".png"} id={accesorio}></img></button></li>  
                 ))}
             </ul>
-            <ul className='rasgos' id='rasgos_cejas'>
-              {arrCejas.map((ceja, index) => (
-                  <li key={ceja.toString()}> <button onClick={cejasSeleccionadas} id={ceja}> <img src={"/img/cejas/" + ceja + ".png"} alt="" className='img_personaje' id={ceja}></img> {ceja} </button></li>  
+            <ul className='rasgos scroll_horizontal' id='rasgos_ojos'>
+              {arrOjos.map((ojo) => (
+                  <li key={ojo.toString()}> <button onClick={ojosSeleccionados} id={ojo}> <img src={"/img/miniaturaOjos/" + ojo + ".png"} alt="color de ojos" id={ojo}></img></button></li>  
                 ))}
             </ul>
-            <ul className='rasgos' id='rasgos_ojos'>
-              {arrOjos.map((ojo, index) => (
-                  <li key={ojo.toString()}> <button onClick={ojosSeleccionados} id={ojo}> <img src={"/img/ojos/" + ojo + ".png"} alt="" className='img_personaje' id={ojo}></img> {ojo} </button></li>  
+            <ul className='rasgos scroll_horizontal' id='rasgos_fondo'>
+              {arrFondo.map((fondo) => (
+                  <li key={fondo.toString()}> <button onClick={fondoSeleccionado} id={fondo}> <img src={"/img/miniaturaFondos/" + fondo + ".png"} alt="fondo" id={fondo}></img></button></li>  
                 ))}
             </ul>
         </article>
