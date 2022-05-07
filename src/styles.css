@@ -28,13 +28,19 @@ ul {
     border: none;
     background-color: transparent;
     padding: 0%;
-} .icon, .icon>img {
+} .icon, .icon > img {
     width: 50px;
     height: 50px;}
 #nombre_app {
     font-size: 2rem;
     color: var(--accent-color);
     font-family: 'Fruktur', cursive;
+} .selectorRasgos > article > ul:first-of-type > li > button {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+}
+.selectorRasgos > article{
+    width: 100%;
 } 
 .selectorRasgos > article > ul:first-of-type{
     display: flex;
@@ -43,31 +49,47 @@ ul {
     overflow: scroll;
     padding: 10px;
 }
-.selectorRasgos > article>ul:first-of-type>li>button{
-    height: 50px;
+.selectorRasgos > article > ul:first-of-type > li > button{
     width: 100px;
     margin-right: 10px;
-    border: 1px solid #2b2b2b;
+    border: none;
     border-radius: 5px;
-    background-color: transparent;
-} /*.selectorRasgos > figure {
+    background-color: #d3d3d3;
     display: flex;
-    justify-content: space-between;
-}*/
-.selectorRasgos > figure > div{
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    align-items: center;
+} .selectorRasgos > article > ul:first-of-type > li > button > img {
+    width: 50px;
+    margin-bottom: 5px;
+    display: block;
+}
+.selectorRasgos > figure > div:first-of-type{
     margin: 0px;
     padding: 0%;
     position: relative;
     background-color: #d3d3d3;
-} 
-.selectorRasgos > figure button{
-    width: 200px;
+} .selectorRasgos > figure > div:nth-of-type(2) {
+    display: flex;
+    justify-content: space-between;
     margin-top: 20px;
+} 
+.selectorRasgos > figure > div > button {
     height: 50px;
+}
+.selectorRasgos > figure > div > button:first-of-type{
+    width: 200px;
     background-color: var(--accent-color);
-    color: #fafafa;
-    font-weight: bold;
+    color: var(--black);
+    border: none;
+    border-radius: 10px;
     margin-bottom: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+} .selectorRasgos > figure > div > button:nth-of-type(2){
+    background-color: transparent;
+    border: none;
 }
 #exportar img:not(:first-of-type) {
     position: absolute;
@@ -75,7 +97,7 @@ ul {
     left: 0px;
     margin: 0px;
     padding: 0px;
-} .rasgos>li,  .rasgos>li>button, .rasgos>li>button>img {
+} .rasgos > li,  .rasgos > li > button, .rasgos > li > button > img {
     display: inline-block;
 } .rasgos>li>button{
     margin-left: 10px;
@@ -87,7 +109,7 @@ ul {
 } .rasgos > li>button:active{
     box-shadow: inset 0px 0px 0px 2px var(--accent-color);
 }
-#rasgos_cejas, #rasgos_ojos, #rasgos_accesorio, #rasgos_boca, #rasgos_fondo  {
+#rasgos_cejas, #rasgos_ropa, #rasgos_ojos, #rasgos_accesorio, #rasgos_boca, #rasgos_fondo  {
     display: none;
 }
 
@@ -116,8 +138,8 @@ ul {
         width: 100%;
         overflow: scroll;
     }
-    .selectorRasgos>article>ul:first-of-type{
-        max-width: calc(100% - 20px);
+    .selectorRasgos > article > ul:first-of-type{
+        max-width: 100%;
     } 
     #header {
         justify-content: space-between;
