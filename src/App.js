@@ -5,26 +5,28 @@ import html2canvas from 'html2canvas';
 
 function PersonajeExportar() {
   /* Asignación con useState */
-  let [ojos, setOjos] = useState(1);
+  let [ojos, setOjos] = useState(0);
   let [boca, setBoca] = useState(3);
   let [accesorio, setAccesorio] = useState(1);
   let [piel, setPiel] = useState(1);
   let [fondo, setFondo] = useState(1);
   let [ropa, setRopa] = useState(1);
+  let [pelo, setPelo] = useState(1);
   /*Mínimo 4 por array*/
-  const arrOjos = [1,0];
-  const arrAccesorio = [1,2];
-  const arrBoca = [2,3];
-  const arrPiel = [1,2,3,4];
+  const arrOjos = [0,1,2,3,4,5,6,7,8];
+  const arrAccesorio = [1,2,3];
+  const arrBoca = [2,3,4,5,6];
+  const arrPiel = [1,2,3,4,5,6,7];
   const arrFondo = [1,2,3,4,5];
   const arrRopa = [1];
+  const arrPelo = [1,2,3];
   
   /* Exportar archivo */
   const archivoExportado = function(i){
-    html2canvas(document.querySelector("#exportar")).then(canvas => {
+    html2canvas(document.querySelector("#avatar_exportado")).then(canvas => {
       let img = canvas.toDataURL("img/png");
       let link = document.createElement("a"); /*Elemento que descargaremos*/
-      link.download = "personaje.png"; /*el nombre que tendrá el archivo descargado*/
+      link.download = "Avatar_Generator.png"; /*el nombre que tendrá el archivo descargado*/
       link.href = img;
       link.click();
     });
@@ -43,6 +45,8 @@ function PersonajeExportar() {
     setFondo(e.target.id);
   }; const ropaSeleccionado = function(e){
     setRopa(e.target.id);
+  }; const peloSeleccionado = function(e){
+    setPelo(e.target.id);
   };
   
   /*Variables conseguidas por ID*/
@@ -52,17 +56,20 @@ function PersonajeExportar() {
   const opciones_ojos = document.getElementById("rasgos_ojos");
   const opciones_fondo = document.getElementById("rasgos_fondo");
   const opciones_ropa = document.getElementById("rasgos_ropa");
+  const opciones_pelo = document.getElementById("rasgos_pelo");
   
   function displayOjos(){
     opciones_boca.style.display = "none";
     opciones_piel.style.display = "none"; 
     opciones_fondo.style.display = "none";
+    opciones_pelo.style.display = "none";
     opciones_accesorio.style.display = "none";
     opciones_ropa.style.display = "none";
     opciones_ojos.style.display = "block";
   };  function displayAccesorio(){    
     opciones_boca.style.display = "none";    
     opciones_piel.style.display = "none";
+    opciones_pelo.style.display = "none";
     opciones_fondo.style.display = "none";
     opciones_ojos.style.display = "none";
     opciones_ropa.style.display = "none";
@@ -72,11 +79,13 @@ function PersonajeExportar() {
     opciones_accesorio.style.display = "none";
     opciones_ojos.style.display = "none";
     opciones_fondo.style.display = "none";
+    opciones_pelo.style.display = "none";
     opciones_ropa.style.display = "none";
     opciones_boca.style.display = "block";   
   };  function displayPiel(){    
     opciones_boca.style.display = "none";
     opciones_accesorio.style.display = "none";
+    opciones_pelo.style.display = "none";
     opciones_ojos.style.display = "none";
     opciones_fondo.style.display = "none";
     opciones_ropa.style.display = "none";
@@ -85,6 +94,7 @@ function PersonajeExportar() {
     opciones_boca.style.display = "none";
     opciones_accesorio.style.display = "none";
     opciones_ojos.style.display = "none";
+    opciones_pelo.style.display = "none";
     opciones_piel.style.display = "none";
     opciones_ropa.style.display = "none";
     opciones_fondo.style.display = "block";
@@ -93,8 +103,17 @@ function PersonajeExportar() {
     opciones_accesorio.style.display = "none";
     opciones_ojos.style.display = "none";
     opciones_piel.style.display = "none";
+    opciones_pelo.style.display = "none";
     opciones_fondo.style.display = "none";
     opciones_ropa.style.display = "block";
+  };  function displayPelo(){    
+    opciones_boca.style.display = "none";
+    opciones_accesorio.style.display = "none";
+    opciones_ojos.style.display = "none";
+    opciones_piel.style.display = "none";
+    opciones_fondo.style.display = "none";
+    opciones_ropa.style.display = "none";
+    opciones_pelo.style.display = "block";
   };
 
   /*Random avatar*/
@@ -106,19 +125,24 @@ function PersonajeExportar() {
     setPiel(e);
   }; function randomBoca(e) {
     setBoca(e);
+  }; function randomPelo(e) {
+    setPelo(e);
   };
   function randomCharacter() {
     let random_ojo = Math.floor(Math.random() * arrOjos.length);
     let random_boca = Math.floor(Math.random() * arrBoca.length);
     let random_piel = Math.floor(Math.random() * arrPiel.length);
     let random_fondo = Math.floor(Math.random() * arrFondo.length);
+    let random_pelo = Math.floor(Math.random() * arrPelo.length);
     piel = random_piel + 1;
     ojos = random_ojo;
     boca = random_boca + 1;
+    pelo = random_pelo + 1;
     fondo = random_fondo + 1;
     randomFondo(fondo);
     randomOjo(ojos);
     randomBoca(boca);
+    randomPelo(pelo);
     randomPiel(piel);
   }
 
@@ -131,16 +155,16 @@ function PersonajeExportar() {
       </section>
       <section className='selectorRasgos'>
           <figure id="exportar">
-            <div>
-              <img src={"/img/fondo/" + fondo + ".png"} className='img_personaje'/>
-              <img src={"/img/piel/" + piel + ".png"} alt=" " className='img_personaje'/>
-              <img src={"/img/base/peloengominado.png"} alt=" " className='img_personaje'/>
-              <img src={"/img/base/baseOjosNariz.png"} className='img_personaje'/>
-              <img src={"/img/ojos/" + ojos + ".png"} alt=" " className='img_personaje'/>
-              <img src={"/img/base/brilloOjos.png"} className='img_personaje'/>
-              <img src={"/img/boca/" + boca + ".png"} alt=" " className='img_personaje'/>
-              <img src={"/img/accesorio/" + accesorio + ".png"} className='img_personaje'/>
-              <img src={"/img/base/ropaTraje.png"} alt=" " className='img_personaje'/>
+            <div id='avatar_exportado'>
+              <img src={"/img/fondo/" + fondo + ".png"} className='img_personaje'  />
+              <img src={"/img/piel/" + piel + ".png"} alt=" " className='img_personaje'  />
+              <img src={"/img/base/baseOjosNariz.png"} className='img_personaje'  />
+              <img src={"/img/ojos/" + ojos + ".png"} alt=" " className='img_personaje'  />
+              <img src={"/img/base/brilloOjos.png"} className='img_personaje'  />
+              <img src={"/img/boca/" + boca + ".png"} alt=" " className='img_personaje'  />
+              <img src={"/img/accesorio/" + accesorio + ".png"} className='img_personaje'  />
+              <img src={"/img/base/ropaTraje.png"} alt=" " className='img_personaje'  />
+              <img src={"/img/pelo/" + pelo + ".png"} alt=" " className='img_personaje'  />
             </div>
             <div>
               <button onClick={archivoExportado}>Exportar personaje</button>
@@ -163,9 +187,12 @@ function PersonajeExportar() {
               </li>
               <li>
                 <button onClick={displayFondo}><img src='./img/icons/background.png'></img>Fondo</button>
-              </li>
+              </li> {/*
               <li>
                 <button onClick={displayVestimenta}><img src='./img/icons/ropa.png'></img>Vestimenta</button>
+  </li>*/}
+              <li>
+                <button onClick={displayPelo}><img src='./img/icons/pelo.png'></img>Pelo</button>
               </li>
             </ul>
             <ul className='rasgos scroll_horizontal' id='rasgos_piel'>
@@ -196,6 +223,11 @@ function PersonajeExportar() {
             <ul className='rasgos scroll_horizontal' id='rasgos_ropa'>
               {arrRopa.map((ropa) => (
                   <li key={ropa.toString()}> <button onClick={ropaSeleccionado} id={ropa}> <img src={"/img/miniaturaVestimenta/" + ropa + ".png"} alt="ropa" id={ropa}></img></button></li>  
+                ))}
+            </ul>
+            <ul className='rasgos scroll_horizontal' id='rasgos_pelo'>
+              {arrPelo.map((pelo) => (
+                  <li key={pelo.toString()}> <button onClick={peloSeleccionado} id={pelo}> <img src={"/img/miniaturaPelo/" + pelo + ".png"} alt="pelo" id={pelo}></img></button></li>  
                 ))}
             </ul>
         </article>

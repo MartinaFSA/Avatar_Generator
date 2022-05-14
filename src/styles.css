@@ -21,20 +21,18 @@ ul {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 20px 20px 0px 20px;
     margin: 0px;
 }
 .icon {
     border: none;
     background-color: transparent;
     padding: 0%;
-} .icon, .icon > img {
-    width: 50px;
-    height: 50px;}
+}
 #nombre_app {
-    font-size: 2rem;
     color: var(--accent-color);
     font-family: 'Fruktur', cursive;
+    padding: 0%;
+    margin: 0%;
 } .selectorRasgos > article > ul:first-of-type > li > button {
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
@@ -69,7 +67,6 @@ ul {
     margin: 0px;
     padding: 0%;
     position: relative;
-    background-color: #d3d3d3;
 } .selectorRasgos > figure > div:nth-of-type(2) {
     display: flex;
     justify-content: space-between;
@@ -84,7 +81,6 @@ ul {
     color: var(--black);
     border: none;
     border-radius: 10px;
-    margin-bottom: 50px;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
 } .selectorRasgos > figure > div > button:nth-of-type(2){
@@ -109,12 +105,21 @@ ul {
 } .rasgos > li>button:active{
     box-shadow: inset 0px 0px 0px 2px var(--accent-color);
 }
-#rasgos_cejas, #rasgos_ropa, #rasgos_ojos, #rasgos_accesorio, #rasgos_boca, #rasgos_fondo  {
+#rasgos_cejas, #rasgos_pelo, #rasgos_ropa, #rasgos_ojos, #rasgos_accesorio, #rasgos_boca, #rasgos_fondo  {
     display: none;
 }
 
-@media screen and (max-width: 1020px) {
-    .img_personaje {
+@media screen and (max-width: 1019px) {
+    #header {
+        padding: 20px 20px 10px;
+        text-align: center;
+        line-height: 1.6rem;
+    } #nombre_app {
+        font-size: 1.7rem;
+    } .icon, .icon > img {
+            width: 40px;
+            height: 40px;
+    } .img_personaje {
         max-height: 65vh;
         max-width: 100%;
     } #exportar > button {display: none;}
@@ -124,7 +129,10 @@ ul {
         padding: 0px 10px 10px 10px;
         margin: 0px;
         align-items: center;
-    } .rasgos > li > button {
+    } 
+    .selectorRasgos > figure > div > button:first-of-type{
+        margin-bottom: 0px;
+    }.rasgos > li > button {
         width: 100px;
         height: 100px;
     } .rasgos > li > button > img {
@@ -146,9 +154,16 @@ ul {
     }
 }
 @media screen and (min-width: 1020px) {
-    .img_personaje {
+    #header {
+        padding: 20px 20px 0px 20px;
+    }  #nombre_app {
+        font-size: 2rem;
+    } .icon, .icon > img {
+        width: 50px;
+        height: 50px;
+    } .img_personaje {
         max-width: 40vw;
-        max-height: 80vh;
+        max-height: 70vh;
     } #header > button {
         display: none;
     }
@@ -160,7 +175,9 @@ ul {
         display: flex;
         flex-direction: row;
         justify-content: center;
-    } .rasgos > li > button {
+    } .selectorRasgos > figure > div > button:first-of-type{
+        margin-bottom: 20px;
+    }.rasgos > li > button {
         width: 150px;
         height: 150px;
     } .rasgos > li > button > img {
