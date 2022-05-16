@@ -39,6 +39,9 @@ ul {
 }
 .selectorRasgos > article{
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 } 
 .selectorRasgos > article > ul:first-of-type{
     display: flex;
@@ -141,17 +144,21 @@ ul {
     } .rasgos {
         display: flex;
         flex-direction: row;
-        flex-wrap: nowrap;
-        height: 120px;
-        width: 100%;
+        justify-content: flex-start;
         overflow: scroll;
+        padding: 10px 0px;
+        height: 130px;
+        max-width: 100%;
     }
+
     .selectorRasgos > article > ul:first-of-type{
         max-width: 100%;
     } 
     #header {
         justify-content: space-between;
-    }
+    } .selectorRasgos > figure > div:nth-of-type(2) {
+        display: none;
+    } 
 }
 @media screen and (min-width: 1020px) {
     #header {
@@ -187,9 +194,6 @@ ul {
         min-width: 35vw;
         max-width: 45vw;
     } .selectorRasgos > article {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         justify-content:flex-start;
     }
 }
