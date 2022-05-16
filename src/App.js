@@ -58,61 +58,131 @@ function PersonajeExportar() {
   const opciones_pelo = document.getElementById("rasgos_pelo");
   
   function displayOjos(){
-    opciones_boca.style.display = "none";
-    opciones_piel.style.display = "none"; 
-    opciones_fondo.style.display = "none";
-    opciones_pelo.style.display = "none";
-    opciones_accesorio.style.display = "none";
-    opciones_ropa.style.display = "none";
-    opciones_ojos.style.display = "flex";
-  };  function displayAccesorio(){    
-    opciones_boca.style.display = "none";    
-    opciones_piel.style.display = "none";
-    opciones_pelo.style.display = "none";
-    opciones_fondo.style.display = "none";
-    opciones_ojos.style.display = "none";
-    opciones_ropa.style.display = "none";
-    opciones_accesorio.style.display = "flex";
+    if (window.innerWidth <= 1019) { 
+      opciones_boca.style.display = "none";
+      opciones_piel.style.display = "none"; 
+      opciones_fondo.style.display = "none";
+      opciones_pelo.style.display = "none";
+      opciones_accesorio.style.display = "none";
+      opciones_ropa.style.display = "none";
+      opciones_ojos.style.display = "flex";
+    } else{
+      opciones_boca.style.display = "none";
+      opciones_piel.style.display = "none"; 
+      opciones_fondo.style.display = "none";
+      opciones_pelo.style.display = "none";
+      opciones_accesorio.style.display = "none";
+      opciones_ropa.style.display = "none";
+      opciones_ojos.style.display = "block";
+    }
+  };  function displayAccesorio(){  
+    if (window.innerWidth <= 1019) { 
+      opciones_boca.style.display = "none";    
+      opciones_piel.style.display = "none";
+      opciones_pelo.style.display = "none";
+      opciones_fondo.style.display = "none";
+      opciones_ojos.style.display = "none";
+      opciones_ropa.style.display = "none";
+      opciones_accesorio.style.display = "flex";
+    } else{
+      opciones_boca.style.display = "none";    
+      opciones_piel.style.display = "none";
+      opciones_pelo.style.display = "none";
+      opciones_fondo.style.display = "none";
+      opciones_ojos.style.display = "none";
+      opciones_ropa.style.display = "none";
+      opciones_accesorio.style.display = "block";
+    }
   };  function displayBoca(){ 
-    opciones_piel.style.display = "none";
-    opciones_accesorio.style.display = "none";
-    opciones_ojos.style.display = "none";
-    opciones_fondo.style.display = "none";
-    opciones_pelo.style.display = "none";
-    opciones_ropa.style.display = "none";
-    opciones_boca.style.display = "flex";   
+    if (window.innerWidth <= 1019) { 
+      opciones_piel.style.display = "none";
+      opciones_accesorio.style.display = "none";
+      opciones_ojos.style.display = "none";
+      opciones_fondo.style.display = "none";
+      opciones_pelo.style.display = "none";
+      opciones_ropa.style.display = "none";
+      opciones_boca.style.display = "flex";   
+    } else{
+      opciones_piel.style.display = "none";
+      opciones_accesorio.style.display = "none";
+      opciones_ojos.style.display = "none";
+      opciones_fondo.style.display = "none";
+      opciones_pelo.style.display = "none";
+      opciones_ropa.style.display = "none";
+      opciones_boca.style.display = "block";   
+    }
   };  function displayPiel(){    
-    opciones_boca.style.display = "none";
-    opciones_accesorio.style.display = "none";
-    opciones_pelo.style.display = "none";
-    opciones_ojos.style.display = "none";
-    opciones_fondo.style.display = "none";
-    opciones_ropa.style.display = "none";
-    opciones_piel.style.display = "flex";
-  };  function displayFondo(){    
-    opciones_boca.style.display = "none";
-    opciones_accesorio.style.display = "none";
-    opciones_ojos.style.display = "none";
-    opciones_pelo.style.display = "none";
-    opciones_piel.style.display = "none";
-    opciones_ropa.style.display = "none";
-    opciones_fondo.style.display = "flex";
+    if (window.innerWidth <= 1019) { 
+      opciones_boca.style.display = "none";
+      opciones_accesorio.style.display = "none";
+      opciones_pelo.style.display = "none";
+      opciones_ojos.style.display = "none";
+      opciones_fondo.style.display = "none";
+      opciones_ropa.style.display = "none";
+      opciones_piel.style.display = "flex";
+    } else{
+      opciones_boca.style.display = "none";
+      opciones_accesorio.style.display = "none";
+      opciones_pelo.style.display = "none";
+      opciones_ojos.style.display = "none";
+      opciones_fondo.style.display = "none";
+      opciones_ropa.style.display = "none";
+      opciones_piel.style.display = "block";
+    }
+  };  function displayFondo(){   
+    if (window.innerWidth <= 1019) { 
+      opciones_boca.style.display = "none";
+      opciones_accesorio.style.display = "none";
+      opciones_ojos.style.display = "none";
+      opciones_pelo.style.display = "none";
+      opciones_piel.style.display = "none";
+      opciones_ropa.style.display = "none";
+      opciones_fondo.style.display = "flex";
+    } else{
+      opciones_boca.style.display = "none";
+      opciones_accesorio.style.display = "none";
+      opciones_ojos.style.display = "none";
+      opciones_pelo.style.display = "none";
+      opciones_piel.style.display = "none";
+      opciones_ropa.style.display = "none";
+      opciones_fondo.style.display = "block";
+    } 
   };  function displayVestimenta(){    
-    opciones_boca.style.display = "none";
-    opciones_accesorio.style.display = "none";
-    opciones_ojos.style.display = "none";
-    opciones_piel.style.display = "none";
-    opciones_pelo.style.display = "none";
-    opciones_fondo.style.display = "none";
-    opciones_ropa.style.display = "flex";
-  };  function displayPelo(){    
-    opciones_boca.style.display = "none";
-    opciones_accesorio.style.display = "none";
-    opciones_ojos.style.display = "none";
-    opciones_piel.style.display = "none";
-    opciones_fondo.style.display = "none";
-    opciones_ropa.style.display = "none";
-    opciones_pelo.style.display = "flex";
+    if (window.innerWidth <= 1019) { 
+      opciones_boca.style.display = "none";
+      opciones_accesorio.style.display = "none";
+      opciones_ojos.style.display = "none";
+      opciones_piel.style.display = "none";
+      opciones_pelo.style.display = "none";
+      opciones_fondo.style.display = "none";
+      opciones_ropa.style.display = "flex";
+    } else{
+      opciones_boca.style.display = "none";
+      opciones_accesorio.style.display = "none";
+      opciones_ojos.style.display = "none";
+      opciones_piel.style.display = "none";
+      opciones_pelo.style.display = "none";
+      opciones_fondo.style.display = "none";
+      opciones_ropa.style.display = "block";
+    }
+  };  function displayPelo(){  
+    if (window.innerWidth <= 1019) { 
+      opciones_boca.style.display = "none";
+      opciones_accesorio.style.display = "none";
+      opciones_ojos.style.display = "none";
+      opciones_piel.style.display = "none";
+      opciones_fondo.style.display = "none";
+      opciones_ropa.style.display = "none";
+      opciones_pelo.style.display = "flex";
+    } else{
+      opciones_boca.style.display = "none";
+      opciones_accesorio.style.display = "none";
+      opciones_ojos.style.display = "none";
+      opciones_piel.style.display = "none";
+      opciones_fondo.style.display = "none";
+      opciones_ropa.style.display = "none";
+      opciones_pelo.style.display = "block";
+    }  
   };
 
   /*Random avatar*/
