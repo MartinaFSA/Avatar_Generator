@@ -22,7 +22,7 @@ function PersonajeExportar() {
   
   /* Exportar archivo */
   const archivoExportado = function(i){
-    html2canvas(document.querySelector("#todo")).then(canvas => {
+    html2canvas(document.querySelector("#avatar_exportado")).then(canvas => {
       let img = canvas.toDataURL("img/png");
       let link = document.createElement("a"); /*Elemento que descargaremos*/
       link.download = "Avatar_Generator.png"; /*el nombre que tendrá el archivo descargado*/
@@ -148,9 +148,9 @@ function PersonajeExportar() {
   return (
     <div id='todo'>
       <section id='header'>
-        <button className='icon' onClick={randomCharacter}><img src='../img/icons/dice.png' alt='generar imagen al azar'></img></button>
+        <button className='icon' onClick={randomCharacter}><img src='./img/icons/dice.png' alt='generar imagen al azar'></img></button>
         <p id='nombre_app'>Avatar generator</p>
-        <button className='icon' onClick={archivoExportado}><img src='/img/icons/download.png' alt='descargar imagen'></img></button>
+        <button className='icon' onClick={archivoExportado}><img src='./img/icons/download.png' alt='descargar imagen'></img></button>
       </section>
       <section className='selectorRasgos'>
           <figure id="exportar">
