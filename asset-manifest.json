@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/MartinaFSA.github.io/avatar_generator/static/css/main.62535fdd.css",
-    "main.js": "/MartinaFSA.github.io/avatar_generator/static/js/main.2953a83a.js",
-    "static/js/787.783edde8.chunk.js": "/MartinaFSA.github.io/avatar_generator/static/js/787.783edde8.chunk.js",
-    "index.html": "/MartinaFSA.github.io/avatar_generator/index.html",
-    "main.62535fdd.css.map": "/MartinaFSA.github.io/avatar_generator/static/css/main.62535fdd.css.map",
-    "main.2953a83a.js.map": "/MartinaFSA.github.io/avatar_generator/static/js/main.2953a83a.js.map",
-    "787.783edde8.chunk.js.map": "/MartinaFSA.github.io/avatar_generator/static/js/787.783edde8.chunk.js.map"
+    "main.css": "/avatar_generator/static/css/main.62535fdd.css",
+    "main.js": "/avatar_generator/static/js/main.df13a560.js",
+    "static/js/787.783edde8.chunk.js": "/avatar_generator/static/js/787.783edde8.chunk.js",
+    "index.html": "/avatar_generator/index.html",
+    "main.62535fdd.css.map": "/avatar_generator/static/css/main.62535fdd.css.map",
+    "main.df13a560.js.map": "/avatar_generator/static/js/main.df13a560.js.map",
+    "787.783edde8.chunk.js.map": "/avatar_generator/static/js/787.783edde8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.62535fdd.css",
-    "static/js/main.2953a83a.js"
+    "static/js/main.df13a560.js"
   ]
 }
