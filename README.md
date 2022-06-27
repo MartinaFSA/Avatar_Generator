@@ -1,1 +1,1 @@
-### Mirá y usá esta página en [mi link de Github Pages](https://martinafsa.github.io/Avatar_Generator/)
+### Mirá y usá esta página en [Github Pages](https://martinafsa.github.io/Avatar_Generator/)
