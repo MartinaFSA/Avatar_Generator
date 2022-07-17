@@ -1,6 +1,6 @@
 ### Mirá y usá esta página en [Github Pages](https://martinafsa.github.io/Avatar_Generator/)
 
-## Instalación :computer: 
+##Instalación :computer: 
   
  Cloná el repositorio (git clone https://github.com/MartinaFSA/Avatar_Generator)
   
