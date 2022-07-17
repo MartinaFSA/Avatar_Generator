@@ -1,6 +1,8 @@
-### Mirá y usá esta página en [Github Pages](https://martinafsa.github.io/Avatar_Generator/)
+#  Avatar Generator
 
-##Instalación :computer: 
+### Usá esta aplicación web en [Github Pages](https://martinafsa.github.io/Avatar_Generator/)
+
+### Instalación :computer: 
   
  Cloná el repositorio (git clone https://github.com/MartinaFSA/Avatar_Generator)
   
@@ -8,6 +10,6 @@
   
  Corré la app en localhost (npm start)
 
-##Tecnologías utilizadas :wrench:
-React
-html2canvas
+### Tecnologías utilizadas :wrench:
+* [ReactJS](https://es.reactjs.org/) - Una biblioteca de JavaScript para construir interfaces de usuario
+* [html2canvas](https://html2canvas.hertzen.com/) - Paquete de NPM para tomar Screenshots con JavaScript
