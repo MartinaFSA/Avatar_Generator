@@ -1,15 +1,16 @@
-#  Avatar Generator
+##  Avatar Generator
+Create a custom avatar and download it as a png image.
 
-### Usá esta aplicación web en [Github Pages](https://martinafsa.github.io/Avatar_Generator/)
+Check out the website at [Github Pages](https://martinafsa.github.io/Avatar_Generator/)
 
-### Instalación :computer: 
-  
- Cloná el repositorio (git clone https://github.com/MartinaFSA/Avatar_Generator)
-  
- Instalá las dependencias y módulos (npm install) 
-  
- Corré la app en localhost (npm start)
+### :computer: Set up
 
-### Tecnologías utilizadas :wrench:
-* [ReactJS](https://es.reactjs.org/) - Una biblioteca de JavaScript para construir interfaces de usuario
-* [html2canvas](https://html2canvas.hertzen.com/) - Paquete de NPM para tomar Screenshots con JavaScript
+ Clone the repository ``git clone https://github.com/MartinaFSA/Avatar_Generator``
+
+ Install the dependencies and modules ``npm install``
+
+ Run the app on localhost ``npm start``
+
+### :wrench: Built with
+* [ReactJS](https://es.reactjs.org/) - A JavaScript library to build reactive user interfaces.
+* [html2canvas](https://html2canvas.hertzen.com/) - NPM package to take Screenshots with JavaScript
